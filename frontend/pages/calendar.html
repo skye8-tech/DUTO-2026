@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calendar — View and manage your academic schedule."
+    />
+    <title>Calendar — Duto</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/utilities.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <aside class="app-sidebar" id="app-sidebar">
+        <div class="sidebar-logo">
+          <a href="dashboard.html" class="logo"
+            >Dut<span class="logo-accent">o</span></a
+          >
+        </div>
+        <nav class="sidebar-nav" aria-label="Application navigation">
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="dashboard.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span> Dashboard</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="task.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span> Tasks</a
+              >
+            </li>
+                        <li class="sidebar-nav-item">
+              <a href="projects.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></span> Projects</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="teams.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span> Teams</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="messages.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span> Messages</a
+              >
+            </li>
+<li class="sidebar-nav-item">
+              <a href="calendar.html" class="active"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span> Calendar</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="schedule.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-week" aria-hidden="true"></i></span> Schedule</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="notes.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i></span> Notes</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="calculator.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span> Calculator</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="pomodoro.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span> Pomodoro</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="duto-ai.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></span> Duto-AI</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="analytics.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span> Analytics</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="settings.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span> Settings</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="profile.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span> Profile</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <a
+            href="login.html"
+            class="btn btn-ghost btn-block btn-sm"
+            id="logout-button"
+            ><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Log Out</a
+          >
+        </div>
+      </aside>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <div class="app-main">
+        <header class="app-topbar">
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Open menu"
+            type="button"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="flex-1"></div>
+          <div class="topbar-actions">
+            <button
+              class="btn btn-ghost btn-icon"
+              id="theme-toggle-button"
+              type="button"
+              aria-label="Toggle theme"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+            <button
+              class="btn btn-ghost btn-icon"
+              id="notification-bell"
+              type="button"
+              aria-label="Notifications"
+              title="Notifications"
+            >
+              <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            </button>
+            <a
+              href="profile.html"
+              class="btn btn-ghost btn-icon"
+              id="topbar-profile-link"
+              aria-label="Profile"
+              title="Profile"
+              ><i class="fa-solid fa-user" aria-hidden="true"></i
+            ></a>
+          </div>
+        </header>
+
+        <main class="app-content">
+          <div class="page-header">
+            <h1>Calendar</h1>
+            <p>View your deadlines, exams, and study sessions at a glance.</p>
+          </div>
+
+          <div class="card">
+            <div class="calendar-header">
+              <button
+                class="btn btn-secondary btn-sm"
+                id="calendar-prev-month"
+                aria-label="Previous month"
+              >
+                ← Prev
+              </button>
+              <h2 class="calendar-month-title" id="calendar-month-title">
+                August 2026
+              </h2>
+              <button
+                class="btn btn-secondary btn-sm"
+                id="calendar-next-month"
+                aria-label="Next month"
+              >
+                Next →
+              </button>
+            </div>
+
+            <div class="calendar-grid" id="calendar-grid">
+              <div class="calendar-day-header">Sun</div>
+              <div class="calendar-day-header">Mon</div>
+              <div class="calendar-day-header">Tue</div>
+              <div class="calendar-day-header">Wed</div>
+              <div class="calendar-day-header">Thu</div>
+              <div class="calendar-day-header">Fri</div>
+              <div class="calendar-day-header">Sat</div>
+
+              <!-- Week 1 -->
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">26</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">27</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">28</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">29</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">30</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">31</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">1</div>
+              </div>
+
+              <!-- Week 2 -->
+              <div class="calendar-day today">
+                <div class="calendar-day-number">2</div>
+                <div class="calendar-event">Calc HW</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">3</div>
+                <div class="calendar-event">Calc Due</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">4</div>
+                <div class="calendar-event">Bio Ch.5</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">5</div>
+                <div class="calendar-event">Physics Exam</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">6</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">7</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">8</div>
+                <div class="calendar-event">Essay Draft</div>
+              </div>
+
+              <!-- Week 3 -->
+              <div class="calendar-day">
+                <div class="calendar-day-number">9</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">10</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">11</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">12</div>
+                <div class="calendar-event">Group Project</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">13</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">14</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">15</div>
+              </div>
+
+              <!-- Week 4 -->
+              <div class="calendar-day">
+                <div class="calendar-day-number">16</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">17</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">18</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">19</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">20</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">21</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">22</div>
+              </div>
+
+              <!-- Week 5 -->
+              <div class="calendar-day">
+                <div class="calendar-day-number">23</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">24</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">25</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">26</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">27</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">28</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">29</div>
+              </div>
+
+              <!-- Week 6 -->
+              <div class="calendar-day">
+                <div class="calendar-day-number">30</div>
+              </div>
+              <div class="calendar-day">
+                <div class="calendar-day-number">31</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">1</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">2</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">3</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">4</div>
+              </div>
+              <div class="calendar-day other-month">
+                <div class="calendar-day-number">5</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../scripts/utilities.js"></script>
+    <script src="../scripts/authentication/authenticationManager.js"></script>
+    <script src="../scripts/settings/themeManager.js"></script>
+    <script src="../scripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Duto — Modern student productivity platform. Organize tasks, study smarter, and track your progress all in one place."
+    />
+    <title>Duto</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/pages.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem("duto_theme") || '"light"');
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+  <body>
+    <!-- Navigation -->
+    <nav class="landing-nav" id="landing-nav" aria-label="Main navigation">
+      <div class="landing-nav-inner">
+        <a href="#home" class="logo">Dut<span class="logo-accent">o</span></a>
+        <div class="landing-nav-links">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="landing-nav-actions">
+          <a href="pages/login.html" class="btn btn-secondary btn-sm">Login</a>
+          <a href="pages/signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              Your entire academic life, <span class="accent">organized</span>.
+            </h1>
+            <p>
+              Duto is the modern productivity platform built for students.
+              Manage tasks, projects, teams, and messages, schedule study
+              sessions, take notes, track progress, and get AI-powered help —
+              all in one clean workspace.
+            </p>
+            <div class="hero-actions">
+              <a href="pages/signup.html" class="btn btn-primary btn-lg"
+                >Get Started</a
+              >
+              <a href="#features" class="btn btn-secondary btn-lg"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <div
+              class="placeholder-image"
+              role="img"
+              aria-label="Duto dashboard preview placeholder"
+            >
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="landing-section landing-section-alt" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Everything you need to succeed</h2>
+          <p>
+            Nine powerful tools designed specifically for student life — unified
+            in one seamless experience.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Task Management</h3>
+            <p>
+              Create, prioritize, and complete assignments with due dates,
+              filters, and progress tracking.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Calendar</h3>
+            <p>
+              Visualize deadlines, exams, and study sessions in a clean monthly
+              calendar view.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Notes</h3>
+            <p>
+              Capture lecture notes and ideas with a simple, distraction-free
+              editor.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Calculator</h3>
+            <p>
+              A built-in calculator always ready when you need quick math during
+              study sessions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true">⏱</div>
+            <h3>Pomodoro Timer</h3>
+            <p>
+              Stay focused with timed study sessions and structured breaks using
+              the Pomodoro technique.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true">AI</div>
+            <h3>Duto-AI</h3>
+            <p>
+              Your AI study assistant — ask questions, get explanations, and
+              study smarter.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Analytics</h3>
+            <p>
+              Track study hours, completed tasks, and productivity trends over
+              time.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Notifications</h3>
+            <p>
+              Never miss a deadline with timely browser notifications for tasks
+              and events.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Study Scheduling</h3>
+            <p>
+              Plan study sessions for any time — even midnight — and get
+              notified when it is time to focus.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Light Availability</h3>
+            <p>
+              See an estimated probability of electricity at your scheduled
+              study time based on local weather, so you can prepare ahead.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon" aria-hidden="true"></div>
+            <h3>Theme Switching</h3>
+            <p>
+              Switch between a clean light mode and a premium dark mode to match
+              your mood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Innovation -->
+    <section class="landing-section" id="innovation">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Duto is different</h2>
+          <p>
+            Built from the ground up for how students actually work and study.
+          </p>
+        </div>
+        <div class="innovation-grid">
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Student-Centered Design</h3>
+              <p>
+                Every feature is designed around the real needs of students —
+                not generic productivity templates.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Everything in One Place</h3>
+              <p>
+                Stop juggling multiple apps. Tasks, notes, calendar, timer, and
+                AI live together seamlessly.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>AI-Powered Learning</h3>
+              <p>
+                Duto-AI helps you understand concepts, plan study sessions, and
+                stay motivated.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Productivity-Focused Interface</h3>
+              <p>
+                Minimal, fast, and distraction-free. Open the app and
+                immediately know what to do next.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Offline-Friendly</h3>
+              <p>
+                Your data is stored in the browser. Keep working even without a
+                constant internet connection.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Weather-Aware Study Planning</h3>
+              <p>
+                In regions where rain often means power cuts, Duto estimates
+                light availability for your scheduled sessions so you can
+                prepare in advance.
+              </p>
+            </div>
+          </div>
+          <div class="innovation-item">
+            <div class="innovation-icon" aria-hidden="true"></div>
+            <div>
+              <h3>Clean &amp; Consistent</h3>
+              <p>
+                A professional SaaS experience with a simple learning curve — no
+                training required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="landing-section landing-section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2>How it works</h2>
+          <p>From signup to success in five simple steps.</p>
+        </div>
+        <div class="how-it-works-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Create an account</h3>
+            <p>Sign up in seconds and set up your student profile.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Organize tasks</h3>
+            <p>Add assignments, set priorities, and never miss a deadline.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Study with focus</h3>
+            <p>Use the Pomodoro timer and notes to stay locked in.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Ask Duto-AI</h3>
+            <p>Get instant help understanding difficult concepts.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Track progress</h3>
+            <p>Watch your productivity grow with clear analytics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="landing-section" id="dashboard-preview">
+      <div class="container">
+        <div class="dashboard-preview">
+          <div class="dashboard-preview-text">
+            <h2>Your command center for academic success</h2>
+            <p>
+              The dashboard gives you an instant overview of today's tasks,
+              upcoming deadlines, study sessions, and quick access to every tool
+              you need.
+            </p>
+            <ul class="dashboard-preview-list">
+              <li>Today's tasks at a glance</li>
+              <li>Upcoming deadlines highlighted</li>
+              <li>Productivity summary &amp; Pomodoro status</li>
+              <li>Quick notes and calculator access</li>
+              <li>One-click access to Duto-AI</li>
+            </ul>
+          </div>
+          <div class="dashboard-preview-image">
+            <div
+              class="placeholder-image"
+              role="img"
+              aria-label="Dashboard mock-up placeholder"
+            >
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="landing-section landing-section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>Loved by students</h2>
+          <p>See what fellow students are saying about Duto.</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Duto completely changed how I manage my semester. Having tasks,
+              notes, and a timer in one place means I actually finish what I
+              start."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">W</div>
+              <div>
+                <div class="testimonial-name">Wez</div>
+                <div class="testimonial-role">Computer Science Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "The Pomodoro timer and analytics keep me accountable. I can see
+              exactly how much I've studied each week and it motivates me to do
+              more."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="testimonial-name">Marion</div>
+                <div class="testimonial-role">Medical Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Duto-AI is a game changer for exam prep. I ask questions late at
+              night and get clear explanations without waiting for office
+              hours."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="testimonial-name">Myria</div>
+                <div class="testimonial-role">Engineering Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Clean, fast, and no clutter. I switched from three different apps
+              to just Duto and my stress levels dropped immediately."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">G</div>
+              <div>
+                <div class="testimonial-name">Genesis</div>
+                <div class="testimonial-role">Business Student</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Dark mode is perfect for late-night study sessions. The red
+              accents give it energy without being distracting. Highly
+              recommend."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">D</div>
+              <div>
+                <div class="testimonial-name">Damian</div>
+                <div class="testimonial-role">Law Student</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="landing-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Duto</h2>
+        </div>
+        <div class="about-content">
+          <p>
+            Duto is a modern student productivity web application designed to
+            help students organize every aspect of their academic life in one
+            place. From task management and study planning to notes, timers, and
+            AI assistance — everything lives in a single, intuitive platform.
+          </p>
+          <p>
+            It was created because students deserve better than fragmented tools
+            and overwhelming interfaces. We believe productivity software should
+            feel calm, focused, and purpose-built for learning.
+          </p>
+          <div class="about-mission-vision">
+            <div class="about-box">
+              <h3>Mission</h3>
+              <p>
+                To empower every student with a clear, unified workspace that
+                reduces stress and amplifies academic performance.
+              </p>
+            </div>
+            <div class="about-box">
+              <h3>Vision</h3>
+              <p>
+                A world where every student has the tools to organize their
+                studies, stay focused, and reach their full potential.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="landing-section landing-section-alt" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get in touch</h2>
+          <p>Have a question or feedback? We'd love to hear from you.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>wez@stud-i.app</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>Remote-first · Worldwide</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <i class="fa-solid fa-comments" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4>Support</h4>
+                <p>support@stud-i.app</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form" action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input
+                type="text"
+                id="contact-subject"
+                name="subject"
+                placeholder="How can we help?"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="contact-submit-button"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="landing-section" id="cta">
+      <div class="container">
+        <div class="cta-section">
+          <h2>Ready to take control of your studies?</h2>
+          <p>
+            Join students who are organizing smarter, studying better, and
+            achieving more with Duto.
+          </p>
+          <a href="pages/signup.html" class="btn btn-primary btn-lg"
+            >Get Started for Free</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="logo"
+              >Dut<span class="logo-accent">o</span></a
+            >
+            <p>
+              The modern student productivity platform. Organize tasks, study
+              with focus, and track your progress — all in one place.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources.</h4>
+            <ul>
+              <li><a href="pages/login.html">Login</a></li>
+              <li><a href="pages/signup.html">Sign Up</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#innovation">Why Duto</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:hello@stud-i.app">hello@stud-i.app</a></li>
+              <li>
+                <a href="mailto:support@stud-i.app">support@stud-i.app</a>
+              </li>
+            </ul>
+            <div class="social-links mt-4">
+              <a
+                href="#"
+                class="social-link"
+                aria-label="Twitter / X"
+                id="social-twitter"
+                >𝕏</a
+              >
+              <a
+                href="#"
+                class="social-link"
+                aria-label="GitHub"
+                id="social-github"
+                >GH</a
+              >
+              <a
+                href="#"
+                class="social-link"
+                aria-label="LinkedIn"
+                id="social-linkedin"
+                >in</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>©2026 Duto. All rights reserved.</p>
+          <p>Built for students and project managers,by Wez.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/utilities.js"></script>
+    <script src="../scripts/settings/themeManager.js"></script>
+    <script src="../scripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Study Schedule — Plan study sessions and check light availability."
+    />
+    <title>Study Schedule — Duto</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/utilities.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script>
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem("duto_theme") || '"light"');
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+  <body>
+    <div class="app-layout">
+      <aside class="app-sidebar" id="app-sidebar">
+        <div class="sidebar-logo">
+          <a href="dashboard.html" class="logo"
+            >Dut<span class="logo-accent">o</span></a
+          >
+        </div>
+        <nav class="sidebar-nav" aria-label="Application navigation">
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="dashboard.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span> Dashboard</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="task.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span> Tasks</a
+              >
+            </li>
+                        <li class="sidebar-nav-item">
+              <a href="projects.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></span> Projects</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="teams.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span> Teams</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="notifications.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></span> Notifications</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="messages.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span> Messages</a
+              >
+            </li>
+<li class="sidebar-nav-item">
+              <a href="calendar.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span> Calendar</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="schedule.html" class="active"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calendar-week" aria-hidden="true"></i></span> Schedule</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="notes.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i></span> Notes</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="calculator.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span> Calculator</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="pomodoro.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span> Pomodoro</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="duto-ai.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></span> Duto-AI</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="analytics.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span> Analytics</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="settings.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span> Settings</a
+              >
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="profile.html"
+                ><span class="sidebar-nav-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span> Profile</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <a
+            href="login.html"
+            class="btn btn-ghost btn-block btn-sm"
+            id="logout-button"
+            ><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Log Out</a
+          >
+        </div>
+      </aside>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <div class="app-main">
+        <header class="app-topbar">
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Open menu"
+            type="button"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="flex-1"></div>
+          <div class="topbar-actions">
+            <button
+              class="btn btn-ghost btn-icon"
+              id="theme-toggle-button"
+              type="button"
+              aria-label="Toggle theme"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+            <button
+              class="btn btn-ghost btn-icon"
+              id="notification-bell"
+              type="button"
+              aria-label="Notifications"
+              title="Notifications"
+            >
+              <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            </button>
+            <a
+              href="profile.html"
+              class="btn btn-ghost btn-icon"
+              id="topbar-profile-link"
+              aria-label="Profile"
+              title="Profile"
+              ><i class="fa-solid fa-user" aria-hidden="true"></i
+            ></a>
+          </div>
+        </header>
+
+        <main class="app-content">
+          <div class="page-header">
+            <h1>Study Schedule</h1>
+            <p>
+              Plan focused study sessions and check the estimated light
+              availability for that time.
+            </p>
+          </div>
+
+          <!-- Create Schedule Form -->
+          <div class="card mb-8" id="schedule-create-card">
+            <div class="card-header">
+              <h2 class="card-title">Schedule a Study Session</h2>
+            </div>
+            <form id="schedule-form" action="#" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="schedule-title-input">Session Title</label>
+                  <input
+                    type="text"
+                    id="schedule-title-input"
+                    name="title"
+                    placeholder="e.g. Calculus Chapter 7"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="schedule-subject-input">Subject</label>
+                  <input
+                    type="text"
+                    id="schedule-subject-input"
+                    name="subject"
+                    placeholder="e.g. Mathematics"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="schedule-date-input">Date</label>
+                  <input
+                    type="date"
+                    id="schedule-date-input"
+                    name="date"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="schedule-time-input">Start Time</label>
+                  <input
+                    type="time"
+                    id="schedule-time-input"
+                    name="time"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="schedule-duration-input"
+                    >Duration (minutes)</label
+                  >
+                  <input
+                    type="number"
+                    id="schedule-duration-input"
+                    name="duration"
+                    min="15"
+                    step="15"
+                    value="60"
+                    placeholder="60"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="schedule-city-input"
+                    >City (for light estimate)</label
+                  >
+                  <select id="schedule-city-input" name="city">
+                    <option value="yaounde">Yaoundé</option>
+                    <option value="douala">Douala</option>
+                    <option value="bafoussam">Bafoussam</option>
+                    <option value="bamenda">Bamenda</option>
+                    <option value="garoua">Garoua</option>
+                    <option value="maroua">Maroua</option>
+                    <option value="ngaoundere">Ngaoundéré</option>
+                    <option value="other">Other / Manual</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-checkbox">
+                  <input
+                    type="checkbox"
+                    id="schedule-notify-checkbox"
+                    name="notify"
+                    checked
+                  />
+                  <span class="text-sm text-secondary"
+                    >Send me a browser notification at the scheduled time</span
+                  >
+                </label>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="schedule-submit-button"
+              >
+                Schedule Session
+              </button>
+            </form>
+          </div>
+
+          <!-- Light Availability Legend -->
+          <div class="light-legend mb-6" id="light-availability-legend">
+            <span class="light-legend-title">Light availability estimate</span>
+            <div class="light-legend-items">
+              <span class="light-badge light-high">High (70%+)</span>
+              <span class="light-badge light-medium">Medium (40–69%)</span>
+              <span class="light-badge light-low">Low (&lt;40%)</span>
+            </div>
+            <p class="text-xs text-muted mt-2">
+              Estimate based on weather forecast (rain/storm risk). Not a
+              real-time power-grid status.
+            </p>
+          </div>
+
+          <!-- Upcoming Sessions -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Upcoming Sessions</h2>
+              <div class="filter-tabs" id="schedule-filter-tabs">
+                <button
+                  class="filter-tab active"
+                  id="schedule-filter-upcoming"
+                  data-filter="upcoming"
+                >
+                  Upcoming
+                </button>
+                <button
+                  class="filter-tab"
+                  id="schedule-filter-today"
+                  data-filter="today"
+                >
+                  Today
+                </button>
+                <button
+                  class="filter-tab"
+                  id="schedule-filter-all"
+                  data-filter="all"
+                >
+                  All
+                </button>
+              </div>
+            </div>
+
+            <div class="schedule-list" id="schedule-list-container">
+              <!-- Session 1: High light -->
+              <div
+                class="schedule-card"
+                data-schedule-id="1"
+                id="schedule-card-1"
+              >
+                <div class="schedule-card-time">
+                  <div class="schedule-time" id="schedule-time-1">14:00</div>
+                  <div class="schedule-date text-xs text-muted">
+                    Aug 3, 2026
+                  </div>
+                  <div class="schedule-duration text-xs text-muted">60 min</div>
+                </div>
+                <div class="schedule-card-content">
+                  <div class="schedule-title" id="schedule-title-1">
+                    Calculus — Chapter 7 Practice
+                  </div>
+                  <div class="schedule-meta">
+                    <span class="badge badge-primary">Mathematics</span>
+                    <span class="text-xs text-muted">Yaoundé</span>
+                    <span class="text-xs text-muted">· Notification on</span>
+                  </div>
+                  <div class="schedule-light-row">
+                    <span class="light-badge light-high" id="schedule-light-1"
+                      >Light ~78%</span
+                    >
+                    <span class="schedule-prep-tip text-xs text-muted"
+                      >Good conditions expected</span
+                    >
+                  </div>
+                </div>
+                <div class="schedule-card-actions">
+                  <button
+                    class="btn btn-ghost btn-sm"
+                    id="edit-schedule-1"
+                    aria-label="Edit session"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-ghost btn-sm text-danger"
+                    id="delete-schedule-1"
+                    aria-label="Delete session"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+
+              <!-- Session 2: Low light (night + rain risk) -->
+              <div
+                class="schedule-card schedule-card-warning"
+                data-schedule-id="2"
+                id="schedule-card-2"
+              >
+                <div class="schedule-card-time">
+                  <div class="schedule-time" id="schedule-time-2">00:00</div>
+                  <div class="schedule-date text-xs text-muted">
+                    Aug 3, 2026
+                  </div>
+                  <div class="schedule-duration text-xs text-muted">90 min</div>
+                </div>
+                <div class="schedule-card-content">
+                  <div class="schedule-title" id="schedule-title-2">
+                    Biology — Cell Division Review
+                  </div>
+                  <div class="schedule-meta">
+                    <span class="badge badge-primary">Biology</span>
+                    <span class="text-xs text-muted">Douala</span>
+                    <span class="text-xs text-muted">· Notification on</span>
+                  </div>
+                  <div class="schedule-light-row">
+                    <span class="light-badge light-low" id="schedule-light-2"
+                      >Light ~28%</span
+                    >
+                    <span class="schedule-prep-tip text-xs"
+                      >High rain risk — charge devices &amp; print notes in
+                      advance</span
+                    >
+                  </div>
+                </div>
+                <div class="schedule-card-actions">
+                  <button
+                    class="btn btn-ghost btn-sm"
+                    id="edit-schedule-2"
+                    aria-label="Edit session"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-ghost btn-sm text-danger"
+                    id="delete-schedule-2"
+                    aria-label="Delete session"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+
+              <!-- Session 3: Medium -->
+              <div
+                class="schedule-card"
+                data-schedule-id="3"
+                id="schedule-card-3"
+              >
+                <div class="schedule-card-time">
+                  <div class="schedule-time" id="schedule-time-3">18:30</div>
+                  <div class="schedule-date text-xs text-muted">
+                    Aug 4, 2026
+                  </div>
+                  <div class="schedule-duration text-xs text-muted">45 min</div>
+                </div>
+                <div class="schedule-card-content">
+                  <div class="schedule-title" id="schedule-title-3">
+                    Spanish Vocabulary Drill
+                  </div>
+                  <div class="schedule-meta">
+                    <span class="badge badge-primary">Languages</span>
+                    <span class="text-xs text-muted">Yaoundé</span>
+                    <span class="text-xs text-muted">· Notification on</span>
+                  </div>
+                  <div class="schedule-light-row">
+                    <span class="light-badge light-medium" id="schedule-light-3"
+                      >Light ~55%</span
+                    >
+                    <span class="schedule-prep-tip text-xs text-muted"
+                      >Moderate cloud cover expected</span
+                    >
+                  </div>
+                </div>
+                <div class="schedule-card-actions">
+                  <button
+                    class="btn btn-ghost btn-sm"
+                    id="edit-schedule-3"
+                    aria-label="Edit session"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-ghost btn-sm text-danger"
+                    id="delete-schedule-3"
+                    aria-label="Delete session"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+
+              <!-- Session 4 -->
+              <div
+                class="schedule-card"
+                data-schedule-id="4"
+                id="schedule-card-4"
+              >
+                <div class="schedule-card-time">
+                  <div class="schedule-time" id="schedule-time-4">09:00</div>
+                  <div class="schedule-date text-xs text-muted">
+                    Aug 5, 2026
+                  </div>
+                  <div class="schedule-duration text-xs text-muted">
+                    120 min
+                  </div>
+                </div>
+                <div class="schedule-card-content">
+                  <div class="schedule-title" id="schedule-title-4">
+                    Physics Midterm Prep
+                  </div>
+                  <div class="schedule-meta">
+                    <span class="badge badge-primary">Physics</span>
+                    <span class="text-xs text-muted">Bamenda</span>
+                    <span class="text-xs text-muted">· Notification on</span>
+                  </div>
+                  <div class="schedule-light-row">
+                    <span class="light-badge light-high" id="schedule-light-4"
+                      >Light ~82%</span
+                    >
+                    <span class="schedule-prep-tip text-xs text-muted"
+                      >Clear conditions expected</span
+                    >
+                  </div>
+                </div>
+                <div class="schedule-card-actions">
+                  <button
+                    class="btn btn-ghost btn-sm"
+                    id="edit-schedule-4"
+                    aria-label="Edit session"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-ghost btn-sm text-danger"
+                    id="delete-schedule-4"
+                    aria-label="Delete session"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../scripts/utilities.js"></script>
+    <script src="../scripts/ui/toast.js"></script>
+    <script src="../scripts/authentication/authenticationManager.js"></script>
+    <script src="../scripts/settings/themeManager.js"></script>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/schedule/lightAvailability.js"></script>
+    <script src="../scripts/schedule/notificationScheduler.js"></script>
+    <script src="../scripts/schedule/scheduleManager.js"></script>
+  </body>
+</html>

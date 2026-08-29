@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create your Duto account and start organizing your academic life."
+    />
+    <title>Sign Up — Duto</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/utilities.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script>
+    (function () {
+      try {
+        var t = JSON.parse(localStorage.getItem("duto_theme") || '"light"');
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+  <body>
+    <div class="auth-layout">
+      <div class="auth-card">
+        <div class="auth-header">
+          <a href="../index.html" class="logo"
+            >Dut<span class="logo-accent">o</span></a
+          >
+          <h1 class="text-xl mt-4">Create your account</h1>
+          <p class="text-sm text-secondary mt-2">
+            Start organizing your academic life today
+          </p>
+        </div>
+
+        <form id="signup-form" action="#" method="post">
+          <div class="form-group">
+            <label for="signup-fullname">Full Name</label>
+            <input
+              type="text"
+              id="signup-fullname"
+              name="fullname"
+              placeholder="Jane Doe"
+              required
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input
+              type="text"
+              id="signup-username"
+              name="username"
+              placeholder="Choose a username"
+              required
+              minlength="3"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input
+              type="email"
+              id="signup-email"
+              name="email"
+              placeholder="you@university.edu"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input
+              type="password"
+              id="signup-password"
+              name="password"
+              placeholder="Create a strong password"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input
+              type="password"
+              id="signup-confirm-password"
+              name="confirm-password"
+              placeholder="Confirm your password"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" id="signup-terms" name="terms" required />
+              <span class="text-sm text-secondary"
+                >I agree to the Terms of Service and Privacy Policy</span
+              >
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            id="signup-submit-button"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          <p>
+            Already have an account?
+            <a href="login.html" id="login-link">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/utilities.js"></script>
+    <script src="../scripts/ui/toast.js"></script>
+    <script src="../scripts/settings/themeManager.js"></script>
+    <script src="../scripts/authentication/authenticationManager.js"></script>
+    <script src="../scripts/authentication/signup.js"></script>
+  </body>
+</html>
